@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "forest";
+  default: true;
+}
+ /* @plugin "daisyui" {
+  themes: "forest";
+} */
