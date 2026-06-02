@@ -58,11 +58,14 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 // const __dirname = path.resolve();
 
+
 app.use(cors({
-    origin:[
-        "http://localhost:5173",
-        "https://mern-thinkboard-tau.vercel.app"
-    ]
+  origin: [
+    "http://localhost:5173",
+    "https://mern-thinkboard-tau.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
 app.use(express.json());
