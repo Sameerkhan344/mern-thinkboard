@@ -16,9 +16,12 @@ const __dirname = path.resolve();
 //middleware
 if (process.env.NODE_ENV !== "production") {
     app.use(cors({
-        origin: ["http://localhost:5173", //local dev
-        "https://mern-thinkboard-vbjo.onrender.com"]
-    }));
+    origin: [
+        "http://localhost:5173",
+        "https://mern-thinkboard-lilac.vercel.app/"
+    ],
+    credentials: true
+}));
 }
 app.use(express.json()); //this middleware will parse JSON bodies : req.body
 app.use(rateLimiter);
