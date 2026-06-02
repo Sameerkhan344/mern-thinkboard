@@ -16,7 +16,8 @@ const __dirname = path.resolve();
 //middleware
 if (process.env.NODE_ENV !== "production") {
     app.use(cors({
-        origin: "http://localhost:5173"
+        origin: "http://localhost:5173", //local dev
+        "https://mern-thinkboard-vbjo.onrender.com"
     }));
 }
 app.use(express.json()); //this middleware will parse JSON bodies : req.body
@@ -29,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
     // app.get("*", (req, res) => {
     //     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     // })
-     app.use((req, res) => {
+    app.use((req, res) => {
         res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     });
 }
